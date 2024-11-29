@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alcaldía de Sogamoso By Fabian</title>
+
+  <!-- Tailwind CSS (via CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles/main.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body class="bg-gray-100">
+
+  <!-- Header Section -->
+  <header class="bg-blue-600 text-white text-center py-8 animate__animated animate__fadeIn">
+    <img src="assets/logo.png" alt="Logo" class="mx-auto w-32 mb-4">
+    <h1 class="text-4xl font-bold">Alcaldía de Sogamoso</h1>
+    <p class="text-xl mt-2">By Fabian</p>
+  </header>
+
+  <!-- Banner Section -->
+  <section class="bg-cover bg-center h-64" style="background-image: url('assets/banner.jpg');">
+    <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
+      <h2 class="text-white text-3xl font-semibold">Bienvenidos a la página oficial</h2>
+    </div>
+  </section>
+
+  <!-- Main Content Section -->
+  <main class="container mx-auto px-4 py-16">
+    <h2 class="text-3xl text-blue-600 font-semibold mb-4">Servicios Municipales</h2>
+    <p class="text-lg mb-8">Aquí encontrarás información relevante sobre los servicios y actividades de la Alcaldía de Sogamoso.</p>
+    
+    <!-- Cards for Services -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="assets/service1.jpg" alt="Servicio 1" class="w-full h-48 object-cover rounded-t-lg mb-4">
+        <h3 class="text-xl font-semibold">Servicio 1</h3>
+        <p class="text-gray-700">Descripción breve del servicio 1.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="assets/service2.jpg" alt="Servicio 2" class="w-full h-48 object-cover rounded-t-lg mb-4">
+        <h3 class="text-xl font-semibold">Servicio 2</h3>
+        <p class="text-gray-700">Descripción breve del servicio 2.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+        <img src="assets/service3.jpg" alt="Servicio 3" class="w-full h-48 object-cover rounded-t-lg mb-4">
+        <h3 class="text-xl font-semibold">Servicio 3</h3>
+        <p class="text-gray-700">Descripción breve del servicio 3.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Chatbot Icon (fixed at the bottom right) -->
+  <div id="chatbot-icon" class="fixed bottom-4 right-4 p-3 bg-blue-600 text-white rounded-full shadow-lg cursor-pointer animate__animated animate__fadeIn">
+    <img src="https://via.placeholder.com/40" alt="Chatbot Icon" class="w-10 h-10">
+  </div>
+
+  <!-- Chatbot Popup -->
+<div id="chatbot-popup" class="hidden fixed bottom-24 right-4 w-80 bg-white border border-blue-600 rounded-lg shadow-lg">
+    <div class="bg-blue-600 text-white p-4 flex justify-between items-center rounded-t-lg">
+      <h3 class="text-lg font-semibold">Chatbot</h3>
+      <button id="close-chatbot" class="text-white text-2xl">&times;</button>
+    </div>
+    <div id="chatbot-messages" class="p-4 overflow-y-auto h-48 space-y-2">
+      <!-- Messages will appear here -->
+    </div>
+    <div class="p-4">
+      <input type="text" id="user-message" class="w-full px-4 py-2 border border-gray-300 rounded-md" placeholder="Escribe tu mensaje..." />
+    </div>
+  </div>
+  
+
+  <!-- Chatbot Toggle and Script -->
+  <script src="scripts/main.js"></script>
+</body>
+</html>
