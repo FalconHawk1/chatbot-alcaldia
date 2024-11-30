@@ -31,14 +31,19 @@ userMessageInput.addEventListener("keypress", async (event) => {
 });
 
 // Function to send message to Flask backend
-async function sendMessageToBackend(message) {
+async function sendMessageToBackend() {
   try {
-    const response = await fetch("http://localhost:5000/chat", {
+
+    const userMessage = document.getElementById("user-message").value;
+
+    if (!userMessage) return;
+
+    const response = await fetch("http://127.0.0.1:8000/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message }),
+      body: JSON.stringify({ message: userMessage }),
     });
     
     const data = await response.json();
