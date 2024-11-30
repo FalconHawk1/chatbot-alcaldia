@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_report.css') }}">
+    <title>Generar Reporte</title>
+</head>
+<body>
+    <h2>Selecciona las columnas para graficar</h2>
+    <form method="POST">
+        <label for="tipo_grafico">Tipo de Gráfico:</label>
+        <select name="tipo_grafico" id="tipo_grafico">
+            <option value="line">Línea</option>
+            <option value="bar">Barra</option>
+            <option value="pie">Pastel</option>
+        </select>
+        <br>
+
+        <label for="nombre_columnas">Selecciona las columnas:</label>
+        <select name="nombre_columnas" id="nombre_columnas" multiple>
+            {% for columna in columnas %}
+                <option value="{{ columna }}">{{ columna }}</option>
+            {% endfor %}
+        </select>
+        <br>
+        <input type="submit" value="Generar Gráfico">
+    </form>
+
+    {% if grafico %}
+        <h3>Gráfico Generado:</h3>
+        <img src="{{ url_for('static', filename='grafico.png') }}" alt="Gráfico">
+        <br>
+        <a href="{{ url_for('download_pdf') }}">Descargar PDF</a>
+    {% endif %}
+</body>
+</html>

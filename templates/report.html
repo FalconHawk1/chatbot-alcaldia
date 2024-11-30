@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='report.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Informe de Datos</h1>
+        <p>Usuario: {{ current_user.id }}</p>
+    </header>
+    
+    <main>
+        <section>
+            <h2>Resumen Estadístico</h2>
+            <div class="tables">
+                {% for table in tables %}
+                    {{ table|safe }}
+                {% endfor %}
+            </div>
+        </section>
+
+        <section>
+            <h2>Gráfico</h2>
+            <img src="{{ url_for('static', filename=graph) }}" alt="Gráfico" class="graph">
+        </section>
+    </main>
+
+    <footer>
+        <a href="{{ url_for('download') }}" class="button">Descargar Informe</a>
+        <a href="{{ url_for('logout') }}" class="button">Cerrar Sesión</a>
+    </footer>
+</body>
+</html>

@@ -30,6 +30,7 @@
         <li><a href="#services" class="hover:text-blue-600 transition duration-300">Servicios</a></li>
         <li><a href="#about" class="hover:text-blue-600 transition duration-300">Nosotros</a></li>
         <li><a href="#contact" class="hover:text-blue-600 transition duration-300">Contacto</a></li>
+        <li><a href="http://127.0.0.1:5001/login" class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 hover:shadow-lg transition duration-300 ease-in-out" target="_blank">Login</a></li>
       </ul>
     </div>
   </nav>
@@ -37,17 +38,28 @@
   <!-- Hero Section -->
   <header class="relative bg-white shadow-lg">
     <div class="container mx-auto flex flex-col items-center justify-center text-center py-20 px-6">
-      <h1 class="text-4xl font-bold text-blue-600">Bienvenidos</h1>
+      <h1 class="text-4xl font-bold text-blue-600">Bienvenidos a Nuestros Servicios</h1>
       <p class="mt-4 text-lg text-gray-600">Descubre cómo la Alcaldía de Sogamoso trabaja por ti.</p>
       <a href="#services"
         class="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-500 transition duration-300">Conoce
         Nuestros Servicios</a>
     </div>
   </header>
-<!-- Carousel-->
-<div>
-    <img src="/static/banner" alt="" sizes="" srcset="">
-</div>
+
+  <!-- Carousel Section -->
+  <section class="relative overflow-hidden bg-gray-50 py-6">
+    <div class="container mx-auto">
+      <div class="relative h-72 rounded-lg shadow-md overflow-hidden">
+        <img src="/static/assets/canales.jpg" alt="Canales de Atención" class="w-full h-full object-cover">
+        <div class="absolute bottom-0 left-0 bg-black bg-opacity-50 text-white text-lg p-4 w-full">
+          <p>
+            Ahora puedes chatear con nosotros en línea: <strong>10:00 a.m. - 12:00 p.m. y 3:00 p.m. - 5:00 p.m.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Divider -->
   <div class="h-1 bg-blue-600"></div>
 
@@ -67,7 +79,7 @@
         <!-- Card 2 -->
         <div
           class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-lg transform hover:scale-105 transition duration-300">
-          <img src="/sites/sogamosoboyaca/content/files/000970/48455_48455_1202x300.jpg"" alt="Servicio 2" class="w-full h-32 object-cover rounded-t-lg mb-4">
+          <img src="/static/assets/redam.jpg" alt="Servicio 2" class="w-full h-32 object-cover rounded-t-lg mb-4">
           <h3 class="text-xl font-semibold text-blue-600">Impuestos</h3>
           <p class="mt-2 text-gray-600">Consulta y paga tus impuestos sin complicaciones.</p>
         </div>

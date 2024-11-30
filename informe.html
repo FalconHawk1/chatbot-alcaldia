@@ -1,0 +1,480 @@
+
+        <!DOCTYPE html>
+        <html lang="es">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Informe</title>
+            <style>
+                body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+header {
+  background: #007BFF;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  color: #333;
+}
+
+.tables {
+  margin: 20px 0;
+}
+
+.graph {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+/* Estilos generales para el cuerpo */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  background-color: #f4f4f4;
+}
+
+/* Estilos para la tabla */
+.tables {
+  margin: 20px 0;
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #fff;
+}
+
+.tables th, .tables td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.tables th {
+  background-color: #4CAF50; /* Color de fondo del encabezado */
+  color: white; /* Color del texto del encabezado */
+}
+
+.tables tr:nth-child(even) {
+  background-color: #f2f2f2; /* Color de fondo de filas pares */
+}
+
+.tables tr:hover {
+  background-color: #ddd; /* Color de fondo al pasar el mouse */
+}
+
+/* Estilos para los encabezados */
+header {
+  background: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* Estilos para el pie de pÃ¡gina */
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.button {
+  background-color: #4CAF50; /* Color del botÃ³n */
+  color: white; /* Color del texto del botÃ³n */
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #45a049; /* Color del botÃ³n al pasar el mouse */
+}
+            </style>
+        </head>
+        <body>
+            <header>
+                <h1>Informe de Datos</h1>
+                <p>Usuario: usuario1</p>
+            </header>
+            
+            <main>
+                <section>
+                    <h2>Resumen Estadístico</h2>
+                    <div class="tables">
+                        <table border="1" class="dataframe tables">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>c_digo_sigep</th>
+      <th>nombre_de_la_entidad</th>
+      <th>nit</th>
+      <th>orden</th>
+      <th>suborden</th>
+      <th>regi_n_pnd</th>
+      <th>c_digo_divipola_departamento</th>
+      <th>departamento</th>
+      <th>c_digo_divipola_municipio</th>
+      <th>municipio</th>
+      <th>clasificaci_n_org_nica</th>
+      <th>sector</th>
+      <th>nivel</th>
+      <th>tipo_de_vinculaci_n</th>
+      <th>naturaleza_jur_dica</th>
+      <th>longitud</th>
+      <th>latitud</th>
+      <th>n_mero_nico</th>
+      <th>mes</th>
+      <th>a_o</th>
+      <th>fuente</th>
+      <th>fecha_actualizaci_n</th>
+      <th>versi_n_tr_mite</th>
+      <th>nombre_del_tr_mite_u_otro</th>
+      <th>nombre_com_n</th>
+      <th>prop_sito_del_tr_mite_u_otro</th>
+      <th>nombre_resultado</th>
+      <th>clase</th>
+      <th>url_tramite_en_l_nea</th>
+      <th>tiempo_obtenci_n</th>
+      <th>tiempo_obtenci_n_medida</th>
+      <th>tiempo_obtenci_n_descripci_n</th>
+      <th>observaci_n_tiempo_obtenci_n</th>
+      <th>observaci_n_tiempo</th>
+      <th>medio_por_donde_se_realiza</th>
+      <th>url_resultado_web</th>
+      <th>tipo_de_fecha_de_ejecuci</th>
+      <th>url_calendario_ejecuci_n</th>
+      <th>situaci_n_de_vida</th>
+      <th>n_mero_de_documentos</th>
+      <th>numero_de_formularios</th>
+      <th>n_mero_de_pagos</th>
+      <th>n_mero_de_verificaciones</th>
+      <th>n_mero_audiencias</th>
+      <th>tiene_costo</th>
+      <th>url_del_visor_del_tr_mite</th>
+      <th>correo_f_sico_medio_resultado</th>
+      <th>correo_electr_nico_medio_resultado</th>
+      <th>presencial_medio_resultado</th>
+      <th>p_gina_web_medio_resultado</th>
+      <th>mensaje_de_texto_medio_resultado</th>
+      <th>correo_certificado_medio_resultado</th>
+      <th>telef_nico_medio_resultado</th>
+      <th>instituciones_o_dependencias_p_blicas</th>
+      <th>organizaciones_audiencia</th>
+      <th>ciudadano_audiencia</th>
+      <th>extranjeros_audiencia</th>
+      <th>telef_nico_seguimiento</th>
+      <th>correo_seguimiento</th>
+      <th>presencial_seguimiento</th>
+      <th>web_seguiminento</th>
+      <th>redes_seguimiento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>8</td>
+      <td>8</td>
+      <td>8</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>5</td>
+      <td>1</td>
+      <td>1</td>
+      <td>138</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>57</td>
+      <td>15</td>
+      <td>129</td>
+      <td>129</td>
+      <td>129</td>
+      <td>124</td>
+      <td>3</td>
+      <td>2</td>
+      <td>25</td>
+      <td>16</td>
+      <td>4</td>
+      <td>2</td>
+      <td>12</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>6</td>
+      <td>7</td>
+      <td>20</td>
+      <td>3</td>
+      <td>2</td>
+      <td>6</td>
+      <td>4</td>
+      <td>2</td>
+      <td>138</td>
+      <td>2</td>
+      <td>2</td>
+      <td>6</td>
+      <td>3</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>3</td>
+      <td>2</td>
+      <td>4</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>1132</td>
+      <td>ALCALDIA DE SOGAMOSO</td>
+      <td>891855130</td>
+      <td>TERRITORIAL</td>
+      <td>MUNICIPAL</td>
+      <td>CENTRO ORIENTE</td>
+      <td>15</td>
+      <td>BOYACÁ</td>
+      <td>759</td>
+      <td>SOGAMOSO</td>
+      <td>RAMA EJECUTIVA</td>
+      <td>NO APLICA</td>
+      <td>CENTRAL</td>
+      <td>ADSCRITAS</td>
+      <td>ALCALDÍA</td>
+      <td>-72,931129</td>
+      <td>5,716085</td>
+      <td>30567</td>
+      <td>3</td>
+      <td>2023</td>
+      <td>Fuente: Función Pública SUIT</td>
+      <td>14/02/2019</td>
+      <td>3</td>
+      <td>Expedición certificación(es)  de paz y salvo</td>
+      <td>Certificado de paz y salvo</td>
+      <td>Obtener la certificación donde se manifiesta que el deudor se encuentra a paz y salvo con la entidad</td>
+      <td>Certificado de paz y salvo</td>
+      <td>HIJO_MODELO_UNICO</td>
+      <td>NULL</td>
+      <td>NULL</td>
+      <td>NULL</td>
+      <td>DIA(S)</td>
+      <td>HÁBIL(ES)</td>
+      <td>NULL</td>
+      <td>PRESENCIAL</td>
+      <td>NULL</td>
+      <td>CUALQUIERA</td>
+      <td>NULL</td>
+      <td>Ninguno</td>
+      <td>1</td>
+      <td>0</td>
+      <td>NO</td>
+      <td>2</td>
+      <td>4</td>
+      <td>NO</td>
+      <td>http://visor.suit.gov.co/VisorSUIT/index.jsf?FI=30567</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>101</td>
+      <td>101</td>
+      <td>101</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>101</td>
+      <td>116</td>
+      <td>101</td>
+      <td>138</td>
+      <td>138</td>
+      <td>1</td>
+      <td>138</td>
+      <td>138</td>
+      <td>138</td>
+      <td>36</td>
+      <td>32</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>4</td>
+      <td>73</td>
+      <td>137</td>
+      <td>35</td>
+      <td>35</td>
+      <td>75</td>
+      <td>70</td>
+      <td>127</td>
+      <td>131</td>
+      <td>136</td>
+      <td>109</td>
+      <td>122</td>
+      <td>84</td>
+      <td>27</td>
+      <td>102</td>
+      <td>119</td>
+      <td>86</td>
+      <td>61</td>
+      <td>119</td>
+      <td>1</td>
+      <td>137</td>
+      <td>136</td>
+      <td>94</td>
+      <td>136</td>
+      <td>138</td>
+      <td>137</td>
+      <td>136</td>
+      <td>71</td>
+      <td>93</td>
+      <td>121</td>
+      <td>117</td>
+      <td>62</td>
+      <td>65</td>
+      <td>75</td>
+      <td>78</td>
+      <td>85</td>
+    </tr>
+  </tbody>
+</table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Gráfico</h2>
+                     <img src="/static/grafico.png" alt="Gráfico" class="graph">
+                </section>
+            </main>
+
+            <footer>
+                <a href="{ url_for('download') }" class="button">Descargar Informe</a>
+                <a href="{ url_for('logout') }" class="button">Cerrar Sesión</a>
+            </footer>
+        </body>
+        </html>
+        
