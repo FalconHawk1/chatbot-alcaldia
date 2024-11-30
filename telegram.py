@@ -1,10 +1,7 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 import requests
-import openai
 import telebot
-import threading
 from dotenv import load_dotenv
-import os
 import random
 
 app = Flask(__name__)
@@ -88,13 +85,6 @@ def bot_mensajes_texto(message):
             )
         else:
             bot.send_message(message.chat.id, "No se encontró ningún trámite con ese nombre.")
-
-@app.route("/")
-def home():
-    return render_template("index.html")
-
-@app.route("/chat", methods=["POST"])
-def chat():
     user_input = request.json.get("message")
 
     if not user_input:
@@ -143,20 +133,6 @@ def chat():
         else:
             return jsonify({"No se encontró ningún trámite con ese nombre."})
 
-def run_flask():
-    app.run(debug=True, host="127.0.0.1", port=8000)
-
-def run_telegram_bot():
-    bot.infinity_polling()
-
 if __name__ == "__main__":
 
-    flask_thread = threading.Thread(target=run_flask)
-    flask_thread.daemon = True
-    flask_thread.start()
-    #app.run(debug=True)
-
-    run_telegram_bot()
-
-
-#"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"
+    bot.infinity_polling()

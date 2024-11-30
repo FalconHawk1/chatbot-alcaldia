@@ -47,7 +47,7 @@ async function sendMessageToBackend() {
     });
     
     const data = await response.json();
-    return data.response;  // Return the chatbot's response
+    return data.response;
   } catch (error) {
     console.error("Error:", error);
     return "Lo siento, hubo un problema con la conexión.";
@@ -67,7 +67,7 @@ function displayUserMessage(message) {
 function displayBotResponse(response) {
   const messageElement = document.createElement("div");
   messageElement.classList.add("bg-gray-200", "text-black", "p-2", "rounded-lg", "my-2", "max-w-xs");
-  messageElement.textContent = response;
+  messageElement.innerHTML = response;
   chatbotMessages.appendChild(messageElement);
   chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
 }

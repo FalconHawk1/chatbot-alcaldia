@@ -1,10 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 import requests
-import openai
-import telebot
-import threading
 from dotenv import load_dotenv
-import os
 import random
 
 app = Flask(__name__)
@@ -46,7 +42,7 @@ def chat():
     user_input = user_input.strip().lower()
 
     if user_input in ["hola", "buenas", "hey"]:
-        return jsonify({"response": "¡Hola! ¿En qué puedo ayudarte?"})
+        return jsonify({"response": "¡Hola! ¿En qué puedo ayudarte? <br> Puedes preguntar por trámites o solicitar información sobre un trámite en específico."})
         
 
     # List of tramites
@@ -55,7 +51,7 @@ def chat():
         if tramites:
             random_tramites = random.sample(tramites, 5)
             tramites_nombres = [t.get("nombre_com_n", "Trámite sin nombre") for t in random_tramites]
-            return jsonify({"response": "Lista de trámites:\n" + "\n".join(tramites_nombres)})
+            return jsonify({"response": "Lista de trámites: \n " + "\n".join(tramites_nombres)})
         else:
             return jsonify({"response": "No se pudo obtener la lista de trámites."})
 
@@ -63,11 +59,11 @@ def chat():
         tramite = fetch_tramite_info(user_input, "id")
         if tramite:
             return jsonify({
-                "response": f"**Trámite Encontrado:**\n"
-                f"Nombre: {tramite.get('nombre_com_n', 'N/A')}\n"
-                f"Propósito: {tramite.get('prop_sito_del_tr_mite_u_otro', 'N/A')}\n"
-                f"Medio: {tramite.get('medio_por_donde_se_realiza', 'N/A')}\n"
-                f"Tiempo de obtención: {tramite.get('tiempo_obtenci_n', 'N/A')} {tramite.get('tiempo_obtenci_n_descripci_n', 'N/A')}\n"
+                "response": f"**Trámite Encontrado:**</br>"
+                f"Nombre: {tramite.get('nombre_com_n', 'N/A')}</br>"
+                f"Propósito: {tramite.get('prop_sito_del_tr_mite_u_otro', 'N/A')}</br>"
+                f"Medio: {tramite.get('medio_por_donde_se_realiza', 'N/A')}</br>"
+                f"Tiempo de obtención: {tramite.get('tiempo_obtenci_n', 'N/A')} {tramite.get('tiempo_obtenci_n_descripci_n', 'N/A')}</br>"
                 f"URL: {tramite.get('url_del_visor_del_tr_mite', 'No disponible')}"
             })
         else:
@@ -85,69 +81,6 @@ def chat():
             })
         else:
             return jsonify({"response": "No se encontró ningún trámite con ese nombre."})
-
-
-# TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-TELEGRAM_BOT_TOKEN = "7749454915:AAHelKrNwA3uBeKYhJ4oGOabBFiza-Arqvs"
-bot = telebot.TeleBot(TELEGRAM_BOT_TOKEN)
-
-# Text message handler with predefined responses
-@bot.message_handler(content_types=["text"])
-def bot_mensajes_texto(message):
-    # Define your predefined responses
-    user_input = message.text.strip().lower()
-
-    # Predefined responses
-    if user_input in ["hola", "buenas", "hey"]:
-        bot.send_message(message.chat.id, "¡Hola! ¿En qué puedo ayudarte?")
-        return
-
-    # List of tramites
-    if user_input in ["tramites", "trámites"]:
-        tramites = fetch_all_tramites()
-        if tramites:
-            random_tramites = random.sample(tramites, 5)
-            tramites_nombres = [t.get("nombre_com_n", "Trámite sin nombre") for t in random_tramites]
-            bot.send_message(message.chat.id, "Lista de trámites:\n" + "\n".join(tramites_nombres))
-        else:
-            bot.send_message(message.chat.id, "No se pudo obtener la lista de trámites.")
-        return
-
-    if user_input.isdigit():
-        tramite = fetch_tramite_info(user_input, "id")
-        if tramite:
-            bot.send_message(
-                message.chat.id,
-                f"**Trámite Encontrado:**\n"
-                f"Nombre: {tramite.get('nombre_com_n', 'N/A')}\n"
-                f"Propósito: {tramite.get('prop_sito_del_tr_mite_u_otro', 'N/A')}\n"
-                f"Medio: {tramite.get('medio_por_donde_se_realiza', 'N/A')}\n"
-                f"Tiempo de obtención: {tramite.get('tiempo_obtenci_n', 'N/A')} {tramite.get('tiempo_obtenci_n_descripci_n', 'N/A')}\n"
-                f"URL: {tramite.get('url_del_visor_del_tr_mite', 'No disponible')}"
-            )
-        else:
-            bot.send_message(message.chat.id, "No se encontró ningún trámite con ese ID.")
-    else:
-        tramite = fetch_tramite_info(user_input, "name")
-        if tramite:
-            bot.send_message(
-                message.chat.id,
-                f"**Trámite Encontrado:**\n"
-                f"Nombre: {tramite.get('nombre_com_n', 'N/A')}\n"
-                f"Propósito: {tramite.get('prop_sito_del_tr_mite_u_otro', 'N/A')}\n"
-                f"Medio: {tramite.get('medio_por_donde_se_realiza', 'N/A')}\n"
-                f"Tiempo de obtención: {tramite.get('tiempo_obtenci_n', 'N/A')} {tramite.get('tiempo_obtenci_n_descripci_n', 'N/A')}\n"
-                f"URL: {tramite.get('url_del_visor_del_tr_mite', 'No disponible')}"
-            )
-        else:
-            bot.send_message(message.chat.id, "No se encontró ningún trámite con ese nombre.")
-
-
-def run_flask():
-    app.run(debug=True, host="127.0.0.1", port=8000, threaded=True)
-
-def run_telegram_bot():
-    bot.infinity_polling()
 
 if __name__ == "__main__":
     # Running Flask in a separate thread
