@@ -21,6 +21,36 @@
 
 <body class="bg-gray-100 text-gray-800">
 
+  <header class="bg-blue-600 text-white shadow-md">
+    <div class="container mx-auto flex items-center justify-between py-2 px-4">
+      <!-- Left Logos -->
+      <div class="flex items-center space-x-4">
+        <img src="/static/assets/gov.png" alt="Gov Logo" class="h-8">
+        <div class="flex items-center space-x-2">
+          <img src="/static/assets/municipio.png" alt="Municipio Logo" class="h-10">
+          <span class="text-sm sm:text-base font-semibold">Alcaldía de Sogamoso Boyacá</span>
+        </div>
+      </div>
+  
+      <!-- Search Bar -->
+      <div class="flex items-center space-x-2">
+        <input
+          type="text"
+          placeholder="Buscar en la entidad"
+          class="py-1 px-3 rounded-full border-none text-gray-700 focus:outline-none focus:ring focus:ring-blue-300"
+        >
+        <button class="bg-white text-blue-600 px-3 py-1 rounded-full font-semibold hover:bg-gray-100">
+          🔍
+        </button>
+      </div>
+  
+      <!-- Login Section -->
+      <div>
+        <a href="http://127.0.0.1:5001/login" target="_blank" class="text-white font-medium hover:underline">Inicia sesión</a>
+      </div>
+    </div>
+  </header>
+
   <!-- Topbar -->
   <nav class="bg-white shadow-md">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
@@ -30,13 +60,12 @@
         <li><a href="#services" class="hover:text-blue-600 transition duration-300">Servicios</a></li>
         <li><a href="#about" class="hover:text-blue-600 transition duration-300">Nosotros</a></li>
         <li><a href="#contact" class="hover:text-blue-600 transition duration-300">Contacto</a></li>
-        <li><a href="http://127.0.0.1:5001/login" class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 hover:shadow-lg transition duration-300 ease-in-out" target="_blank">Login</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <header class="relative bg-white shadow-lg">
+  <!--<header class="relative bg-white shadow-lg">
     <div class="container mx-auto flex flex-col items-center justify-center text-center py-20 px-6">
       <h1 class="text-4xl font-bold text-blue-600">Bienvenidos a Nuestros Servicios</h1>
       <p class="mt-4 text-lg text-gray-600">Descubre cómo la Alcaldía de Sogamoso trabaja por ti.</p>
@@ -44,7 +73,7 @@
         class="mt-6 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-500 transition duration-300">Conoce
         Nuestros Servicios</a>
     </div>
-  </header>
+  </header>-->
 
   <!-- Carousel Section -->
   <section class="relative overflow-hidden bg-gray-50 py-6">
@@ -79,7 +108,7 @@
         <!-- Card 2 -->
         <div
           class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-lg transform hover:scale-105 transition duration-300">
-          <img src="/static/assets/redam.jpg" alt="Servicio 2" class="w-full h-32 object-cover rounded-t-lg mb-4">
+          <img src="/static/assets/service2.jpg" alt="Servicio 2" class="w-full h-32 object-cover rounded-t-lg mb-4">
           <h3 class="text-xl font-semibold text-blue-600">Impuestos</h3>
           <p class="mt-2 text-gray-600">Consulta y paga tus impuestos sin complicaciones.</p>
         </div>
@@ -122,15 +151,15 @@
       </path>
     </svg>
   </div>
-
+  
   <!-- Chatbot Popup -->
   <div id="chatbot-popup"
-    class="hidden fixed bottom-24 right-4 w-80 bg-white border border-blue-600 rounded-lg shadow-lg">
+    class="hidden fixed bottom-24 right-4 w-96 bg-white border border-blue-600 rounded-lg shadow-lg">
     <div class="bg-blue-600 text-white p-4 flex justify-between items-center rounded-t-lg">
       <h3 class="text-lg font-semibold">Chatbot</h3>
       <button id="close-chatbot" class="text-white text-2xl">&times;</button>
     </div>
-    <div id="chatbot-messages" class="p-4 overflow-y-auto h-48 space-y-2">
+    <div id="chatbot-messages" class="p-4 overflow-y-auto h-64 space-y-2">
       <div id="response"></div>
     </div>
     <div class="p-4">
